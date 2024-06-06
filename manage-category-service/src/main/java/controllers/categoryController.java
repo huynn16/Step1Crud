@@ -1,5 +1,7 @@
 package controllers;
 
+import services.categoryService;
+import dtos.categoryDto;
 import entities.Category;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.http.HttpStatus;
@@ -13,8 +15,8 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("api/categories")
 public class categoryController {
-    private categoryService categoryService;
-    private Logger logger = LogManager.getLogger(Controller.class);
+    private final categoryService categoryService;
+    private final Logger logger = (Logger) LogManager.getLogger(Controller.class);
 
     public categoryController(categoryService categoryService) {
         this.categoryService = categoryService;
